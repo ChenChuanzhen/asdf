@@ -7,14 +7,32 @@
 
 import UIKit
 
+// MARK: - Notification Name Extensions
+extension Notification.Name {
+    static let tokenExpired = Notification.Name("tokenExpired")
+}
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        setupTokenExpiredObserver()
         return true
+    }
+    
+    private func setupTokenExpiredObserver() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handleTokenExpired),
+                                               name: .tokenExpired,
+                                               object: nil)
+    }
+    
+    @objc private func handleTokenExpired() {
+        DispatchQueue.main.async {
+            AppRouter.shared.navigateToLogin()
+        }
     }
 
     // MARK: UISceneSession Lifecycle
