@@ -17,14 +17,10 @@ final class MainTabBarController: UITabBarController {
     }
     
     private func setupTabs() {
-        // Use Routers to create module instances. 
-        // This ensures the modules are configured correctly by their own routers (e.g. NavControllers, TabItems)
-        
         let homeNav = HomeRouter.createModule()
         let portfolioNav = PortfolioRouter.createModule()
         let discoverNav = DiscoverRouter.createModule()
         let accountNav = AccountRouter.createModule()
-        
         viewControllers = [homeNav, portfolioNav, discoverNav, accountNav]
     }
     

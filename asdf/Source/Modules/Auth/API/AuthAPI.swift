@@ -4,7 +4,7 @@ import Moya
 enum AuthAPI {
     case login(String, String)
     case register(String, String)
-    case logout
+    case logout(String)
     case refreshToken(String)
     case userInfo
 }
@@ -49,8 +49,8 @@ extension AuthAPI: APITargetType {
             return .requestParameters(parameters: ["username": username, "password": password],
                                       encoding: JSONEncoding.default)
             
-        case .logout:
-            return .requestPlain
+        case .logout(let token):
+            return .requestParameters(parameters: ["token": token], encoding: JSONEncoding.default)
             
         case .refreshToken(let refreshToken):
             return .requestParameters(parameters: ["refresh_token": refreshToken],

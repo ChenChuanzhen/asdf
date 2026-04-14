@@ -62,15 +62,9 @@ final class AuthService {
     */
     
     /// Login with async/await while keeping token persistence in one place
-    func login(username: String,
-               pass: String,
-               showLoading: Bool = true) async throws -> TokenModel {
-        let tokenModel = try await NetworkManager.shared.requestAsync(AuthAPI.login(username, pass),
-                                                                      modelType: TokenModel.self,
-                                                                      showLoading: showLoading)
-        TokenManager.shared.saveTokens(accessToken: tokenModel.accessToken,
-                                       refreshToken: tokenModel.refreshToken,
-                                       expiresIn: tokenModel.expiresIn)
+    func login(username: String, pass: String, showLoading: Bool = true) async throws -> TokenModel {
+        let tokenModel = try await NetworkManager.shared.requestAsync(AuthAPI.login(username, pass), modelType: TokenModel.self, showLoading: showLoading)
+        TokenManager.shared.saveTokens(accessToken: tokenModel.accessToken, refreshToken: tokenModel.refreshToken, expiresIn: tokenModel.expiresIn)
         return tokenModel
     }
     
@@ -82,17 +76,15 @@ final class AuthService {
                                                      showLoading: showLoading)
     }
     
-    func logout(showLoading: Bool = true) async -> Bool {
+    func logout(token:String, showLoading: Bool = true) async -> Bool {
         do {
-            _ = try await NetworkManager.shared.requestAsync(AuthAPI.logout,
+            _ = try await NetworkManager.shared.requestAsync(AuthAPI.logout(token),
                                                              modelType: EmptyResponse.self,
                                                              showLoading: showLoading)
             TokenManager.shared.clearTokens()
             UserManager.shared.clearUser()
             return true
         } catch {
-            TokenManager.shared.clearTokens()
-            UserManager.shared.clearUser()
             return false
         }
     }

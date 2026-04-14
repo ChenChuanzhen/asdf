@@ -172,7 +172,7 @@ final class AccountViewController: BaseViewController {
     private func handleAction(_ action: AccountAction) {
         switch action {
         case .logout:
-            handleLogout()
+            presentLogoutSheet()
         case .enableNotifications:
             if let settingsURL = URL(string: UIApplication.openSettingsURLString),
                UIApplication.shared.canOpenURL(settingsURL) {
@@ -183,11 +183,30 @@ final class AccountViewController: BaseViewController {
         }
     }
     
-    private func handleLogout() {
+    private func presentLogoutSheet() {
+        let logoutImage = UIImage(systemName: "rectangle.portrait.and.arrow.right")?
+            .withConfiguration(UIImage.SymbolConfiguration(pointSize: 34, weight: .medium))
+            .withTintColor(AccountDesign.Color.primaryBlue, renderingMode: .alwaysOriginal)
+        
+        CommonSheetView.show(
+            configuration: .init(
+                titleImage: logoutImage,
+                title: "Are you sure\nyou want to log out?",
+                message: nil,
+                primaryAction: .init(title: "Log Out") { [weak self] in
+                    self?.performLogout()
+                },
+                secondaryAction: .init(title: "Cancel", style: .secondary),
+                showsContactSupport: false
+            )
+        )
+    }
+    
+    private func performLogout() {
         Task { [weak self] in
-            guard let self else { return }
+            guard self != nil else { return }
             
-            let isLoggedOut = await AuthService.shared.logout(showLoading: true)
+            let isLoggedOut = await AuthService.shared.logout(token: TokenManager.shared.accessToken ?? "", showLoading: true)
             if isLoggedOut {
                 AppRouter.shared.navigateToLogin()
             } else {

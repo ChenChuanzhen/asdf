@@ -8,9 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		44C0E767FFE51B258644465D /* Pods_asdf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AAD47CEA75A6BDE5FE7A6F /* Pods_asdf.framework */; };
+		6621D81D2F878009000A20F4 /* LiquidGlassSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6621D8162F878009000A20F4 /* LiquidGlassSlider.swift */; };
+		6621D81E2F878009000A20F4 /* LiquidGlassFragment.metal in Sources */ = {isa = PBXBuildFile; fileRef = 6621D8152F878009000A20F4 /* LiquidGlassFragment.metal */; };
+		6621D81F2F878009000A20F4 /* LiquidLensView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6621D81A2F878009000A20F4 /* LiquidLensView.swift */; };
+		6621D8202F878009000A20F4 /* LiquidGlassVertex.metal in Sources */ = {isa = PBXBuildFile; fileRef = 6621D8182F878009000A20F4 /* LiquidGlassVertex.metal */; };
+		6621D8212F878009000A20F4 /* LiquidGlassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6621D8192F878009000A20F4 /* LiquidGlassView.swift */; };
+		6621D8222F878009000A20F4 /* LiquidGlassEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6621D8142F878009000A20F4 /* LiquidGlassEffectView.swift */; };
+		6621D8232F878009000A20F4 /* ZeroCopyBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6621D81B2F878009000A20F4 /* ZeroCopyBridge.swift */; };
+		6621D8242F878009000A20F4 /* LiquidGlassSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6621D8172F878009000A20F4 /* LiquidGlassSwitch.swift */; };
+		6621D84C2F87A6DD000A20F4 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6621D84B2F87A6DD000A20F4 /* CircleProgressView.swift */; };
 		66518B6F2F52964D0086CC3E /* FloatingTitleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66518B6D2F52964D0086CC3E /* FloatingTitleTextField.swift */; };
 		669AAA712F55288400702120 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669AAA702F55288400702120 /* AppTheme.swift */; };
 		66CCE95C2F58136100892936 /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CCE95A2F58136100892936 /* CustomTabBarView.swift */; };
+		66D1CD0E2F8DDCD3005B440A /* CommonSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D1CD0D2F8DDCD3005B440A /* CommonSheetView.swift */; };
 		66EC83CF2F78335F00F341AD /* HomeDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EC83CE2F78335F00F341AD /* HomeDesign.swift */; };
 		66EC83D12F78337600F341AD /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EC83D02F78337600F341AD /* RemoteImageView.swift */; };
 		66EC83D32F78B8A900F341AD /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EC83D22F78B8A900F341AD /* AppConstants.swift */; };
@@ -67,9 +77,19 @@
 
 /* Begin PBXFileReference section */
 		26AAD47CEA75A6BDE5FE7A6F /* Pods_asdf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_asdf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6621D8142F878009000A20F4 /* LiquidGlassEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidGlassEffectView.swift; sourceTree = "<group>"; };
+		6621D8152F878009000A20F4 /* LiquidGlassFragment.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = LiquidGlassFragment.metal; sourceTree = "<group>"; };
+		6621D8162F878009000A20F4 /* LiquidGlassSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidGlassSlider.swift; sourceTree = "<group>"; };
+		6621D8172F878009000A20F4 /* LiquidGlassSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidGlassSwitch.swift; sourceTree = "<group>"; };
+		6621D8182F878009000A20F4 /* LiquidGlassVertex.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = LiquidGlassVertex.metal; sourceTree = "<group>"; };
+		6621D8192F878009000A20F4 /* LiquidGlassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidGlassView.swift; sourceTree = "<group>"; };
+		6621D81A2F878009000A20F4 /* LiquidLensView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidLensView.swift; sourceTree = "<group>"; };
+		6621D81B2F878009000A20F4 /* ZeroCopyBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroCopyBridge.swift; sourceTree = "<group>"; };
+		6621D84B2F87A6DD000A20F4 /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		66518B6D2F52964D0086CC3E /* FloatingTitleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTitleTextField.swift; sourceTree = "<group>"; };
 		669AAA702F55288400702120 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		66CCE95A2F58136100892936 /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
+		66D1CD0D2F8DDCD3005B440A /* CommonSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonSheetView.swift; sourceTree = "<group>"; };
 		66EC83CE2F78335F00F341AD /* HomeDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDesign.swift; sourceTree = "<group>"; };
 		66EC83D02F78337600F341AD /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
 		66EC83D22F78B8A900F341AD /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
@@ -149,11 +169,36 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		6621D8132F877FFF000A20F4 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				6621D81C2F878009000A20F4 /* LiquidGlassKit */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		6621D81C2F878009000A20F4 /* LiquidGlassKit */ = {
+			isa = PBXGroup;
+			children = (
+				6621D8142F878009000A20F4 /* LiquidGlassEffectView.swift */,
+				6621D8152F878009000A20F4 /* LiquidGlassFragment.metal */,
+				6621D8162F878009000A20F4 /* LiquidGlassSlider.swift */,
+				6621D8172F878009000A20F4 /* LiquidGlassSwitch.swift */,
+				6621D8182F878009000A20F4 /* LiquidGlassVertex.metal */,
+				6621D8192F878009000A20F4 /* LiquidGlassView.swift */,
+				6621D81A2F878009000A20F4 /* LiquidLensView.swift */,
+				6621D81B2F878009000A20F4 /* ZeroCopyBridge.swift */,
+			);
+			path = LiquidGlassKit;
+			sourceTree = "<group>";
+		};
 		66518B6E2F52964D0086CC3E /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				66EC83D02F78337600F341AD /* RemoteImageView.swift */,
 				66518B6D2F52964D0086CC3E /* FloatingTitleTextField.swift */,
+				6621D84B2F87A6DD000A20F4 /* CircleProgressView.swift */,
+				66D1CD0D2F8DDCD3005B440A /* CommonSheetView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -534,6 +579,7 @@
 		84BEEB992F3499B600287BB3 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				6621D8132F877FFF000A20F4 /* Lib */,
 				84BEEB692F3499B600287BB3 /* Core */,
 				84BEEB982F3499B600287BB3 /* Modules */,
 			);
@@ -728,6 +774,7 @@
 				84BEEBA42F3499B600287BB3 /* BaseViewController.swift in Sources */,
 				66EC83D32F78B8A900F341AD /* AppConstants.swift in Sources */,
 				84755DE42F401C7700E4A3A1 /* Moya+Decodable.swift in Sources */,
+				66D1CD0E2F8DDCD3005B440A /* CommonSheetView.swift in Sources */,
 				84755DE52F401C7700E4A3A1 /* UIColor+Extensions.swift in Sources */,
 				66CCE95C2F58136100892936 /* CustomTabBarView.swift in Sources */,
 				84E728C62F358A3400FA1825 /* AppConfig.swift in Sources */,
@@ -760,10 +807,19 @@
 				84BEEBB12F3499B600287BB3 /* HomeRouter.swift in Sources */,
 				84BEEBB22F3499B600287BB3 /* HomeBalanceView.swift in Sources */,
 				669AAA712F55288400702120 /* AppTheme.swift in Sources */,
+				6621D81D2F878009000A20F4 /* LiquidGlassSlider.swift in Sources */,
+				6621D81E2F878009000A20F4 /* LiquidGlassFragment.metal in Sources */,
+				6621D81F2F878009000A20F4 /* LiquidLensView.swift in Sources */,
+				6621D8202F878009000A20F4 /* LiquidGlassVertex.metal in Sources */,
+				6621D8212F878009000A20F4 /* LiquidGlassView.swift in Sources */,
+				6621D8222F878009000A20F4 /* LiquidGlassEffectView.swift in Sources */,
+				6621D8232F878009000A20F4 /* ZeroCopyBridge.swift in Sources */,
+				6621D8242F878009000A20F4 /* LiquidGlassSwitch.swift in Sources */,
 				84BEEBB42F3499B600287BB3 /* HomeHeaderView.swift in Sources */,
 				84BEEBB52F3499B600287BB3 /* MainTabBarController.swift in Sources */,
 				84BEEBB62F3499B600287BB3 /* PortfolioViewController.swift in Sources */,
 				84BEEBB72F3499B600287BB3 /* PortfolioRouter.swift in Sources */,
+				6621D84C2F87A6DD000A20F4 /* CircleProgressView.swift in Sources */,
 				66EC83D12F78337600F341AD /* RemoteImageView.swift in Sources */,
 				84BEEBB82F3499B600287BB3 /* AppDelegate.swift in Sources */,
 				84BE7EF22F3F223700BDEE95 /* APIErrorResponse.swift in Sources */,

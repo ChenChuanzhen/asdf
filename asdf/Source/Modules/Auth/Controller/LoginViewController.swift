@@ -222,13 +222,11 @@ final class LoginViewController: BaseViewController {
     // MARK: - Bindings
     
     private func bindViewModel() {
-        viewModel.onLoginSuccess = { [weak self] in
-            guard let self = self else { return }
+        viewModel.onLoginSuccess = {
             AppRouter.shared.navigateToHome()
         }
         
-        viewModel.onLoginFailure = { [weak self] error in
-            guard let self = self else { return }
+        viewModel.onLoginFailure = { error in
             SVProgressHUD.showError(withStatus: error)
         }
     }
@@ -236,11 +234,6 @@ final class LoginViewController: BaseViewController {
     // MARK: - Actions
     
     @objc private func handleLogin() {
-        view.endEditing(true)
-        
-        /*
-        viewModel.login()
-        */
         
         Task { [weak self] in
             guard let self = self else { return }
