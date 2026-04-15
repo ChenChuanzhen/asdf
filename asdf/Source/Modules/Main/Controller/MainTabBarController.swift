@@ -13,7 +13,7 @@ final class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabs()
-        setupCustomTabBar()
+//        setupCustomTabBar()
     }
     
     private func setupTabs() {

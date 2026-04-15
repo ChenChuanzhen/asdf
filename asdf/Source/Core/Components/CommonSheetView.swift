@@ -243,7 +243,11 @@ final class CommonSheetView: UIView {
             self.dimmingView.backgroundColor = Palette.overlay
         }
         
-        UIView.animate(.spring(response: 0.5, dampingFraction: 0.7)) {
+        UIView.animate(withDuration: 0.25,
+                       delay: 0,
+                       usingSpringWithDamping: 0.7,
+                       initialSpringVelocity: 0.8,
+                       options: [.beginFromCurrentState, .allowUserInteraction, .curveEaseOut]) {
             self.sheetContainerView.transform = .identity
         }
     }
@@ -264,8 +268,10 @@ final class CommonSheetView: UIView {
             return
         }
         
-        let endTranslation = max(sheetContainerView.bounds.height + 48, 320)
-        UIView.animate(withDuration: 0.25) {
+        let endTranslation = max(sheetContainerView.bounds.height, 320)
+        UIView.animate(withDuration: 0.25,
+                       delay: 0,
+                       options: [.beginFromCurrentState, .allowUserInteraction, .curveEaseIn]) {
             self.dimmingView.backgroundColor = .clear
             self.sheetContainerView.transform = CGAffineTransform(translationX: 0, y: endTranslation)
         } completion: { _ in

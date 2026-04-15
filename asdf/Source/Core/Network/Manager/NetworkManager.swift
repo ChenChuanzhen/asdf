@@ -23,13 +23,12 @@ class NetworkManager {
                                failure: @escaping (String) -> Void) {
         
         if showLoading {
-            SVProgressHUD.setDefaultMaskType(.clear)
-            SVProgressHUD.show()
+            showLoadingView()
         }
         
         provider.request(MultiTarget(target)) { result in
             if showLoading {
-                SVProgressHUD.dismiss()
+                self.hiddenLoadingView()
             }
             
             switch result {
@@ -65,8 +64,7 @@ class NetworkManager {
                                     completion: @escaping ([Result<T, Error>]) -> Void) {
         
         if showLoading {
-            SVProgressHUD.setDefaultMaskType(.clear)
-            SVProgressHUD.show()
+            showLoadingView()
         }
         
         let group = DispatchGroup()
@@ -114,7 +112,7 @@ class NetworkManager {
         
         group.notify(queue: .main) {
             if showLoading {
-                SVProgressHUD.dismiss()
+                self.hiddenLoadingView()
             }
             completion(results)
         }
@@ -139,15 +137,14 @@ class NetworkManager {
                                         showLoading: Bool = true) async throws -> [T] {
         if showLoading {
             await MainActor.run {
-                SVProgressHUD.setDefaultMaskType(.clear)
-                SVProgressHUD.show()
+                showLoadingView()
             }
         }
         
         defer {
             if showLoading {
-                DispatchQueue.main.async {
-                    SVProgressHUD.dismiss()
+                DispatchQueue.main.async { [weak self] in
+                    self?.hiddenLoadingView()
                 }
             }
         }
@@ -163,6 +160,17 @@ class NetworkManager {
             results.append(result)
         }
         return results
+    }
+    
+    private func showLoadingView() {
+        DispatchQueue.main.async {
+            SVProgressHUD.setDefaultMaskType(.clear)
+            SVProgressHUD.show()
+        }
+    }
+    
+    private func hiddenLoadingView() {
+        SVProgressHUD.dismiss()
     }
 }
 

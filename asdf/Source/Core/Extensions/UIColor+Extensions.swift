@@ -4,7 +4,7 @@ extension UIColor {
     
     /// 从十六进制字符串创建 UIColor
     /// - Parameter hex: 十六进制颜色字符串，格式为 "#RRGGBB"
-    convenience init(hex: String) {
+    convenience init(hex: String, alpha: CGFloat = 1.0) {
         let hexString = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         let scanner = Scanner(string: hexString)
         
@@ -19,7 +19,7 @@ extension UIColor {
         let green = CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0
         let blue = CGFloat(rgbValue & 0x0000FF) / 255.0
         
-        self.init(red: red, green: green, blue: blue, alpha: 1.0)
+        self.init(red: red, green: green, blue: blue, alpha: alpha)
     }
     
     /// 从 RGB 值创建 UIColor
