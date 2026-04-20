@@ -8,7 +8,15 @@ protocol APITargetType: TargetType {
 }
 
 extension APITargetType {
-    // Default implementation
+    
+    var baseURL: URL {
+        return AppConfig.baseURL
+    }
+    
+    var headers: [String : String]? {
+        return ["Content-Type": "application/json"]
+    }
+    
     var shouldShowLoading: Bool {
         return true
     }

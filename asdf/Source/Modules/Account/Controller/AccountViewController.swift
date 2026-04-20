@@ -8,7 +8,7 @@ private enum AccountLayout {
     static let sectionSpacing: CGFloat = 14
     static let cardSpacing: CGFloat = 12
     static let cardCornerRadius: CGFloat = 16
-    static let contentBottomInset: CGFloat = 120
+    static let contentBottomInset: CGFloat = 20
     static let rowHeight: CGFloat = 32
 }
 
@@ -69,17 +69,11 @@ final class AccountViewController: BaseViewController {
             make.bottom.equalToSuperview().inset(AccountLayout.contentBottomInset)
         }
         
-        let topContainer = UIView()
         let topStack = UIStackView(arrangedSubviews: [headerView, referralCardView, notificationPromptView])
         topStack.axis = .vertical
         topStack.spacing = AccountLayout.cardSpacing
-        topContainer.addSubview(topStack)
         
-        topStack.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        
-        stackView.addArrangedSubview(topContainer)
+        stackView.addArrangedSubview(topStack)
         stackView.addArrangedSubview(primarySectionView)
         stackView.addArrangedSubview(supportSectionView)
         stackView.addArrangedSubview(logoutSectionView)
@@ -91,8 +85,7 @@ final class AccountViewController: BaseViewController {
         }
         
         referralCardView.onShareTapped = { [weak self] in
-            guard let self,
-                  let code = currentViewState?.referralCode else { return }
+            guard let self, let code = currentViewState?.referralCode else { return }
             let activity = UIActivityViewController(activityItems: [code], applicationActivities: nil)
             present(activity, animated: true)
         }

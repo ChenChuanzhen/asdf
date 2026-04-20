@@ -3,15 +3,7 @@ import SnapKit
 
 @MainActor
 class HomeViewController: BaseViewController {
-    private struct AssetSummary {
-        let totalAmount: String
-        let walletBalance: String
-        let totalAssetValue: String
-        let cashManagement: String
-        let digitalInvesting: String
-        let equity: String
-        let cryptocurrency: String
-    }
+    private let viewModel = HomeViewModel()
     
     // MARK: - UI Components
     private lazy var scrollView: UIScrollView = {
@@ -148,52 +140,39 @@ class HomeViewController: BaseViewController {
     }
     
     override func setupBindings() {
+        viewModel.onDataUpdated = { [weak self] name, summary in
+            guard let self = self else { return }
+            
+            if let name {
+                self.headerView.updateUserInfo(name)
+            }
+            
+            self.balanceView.updateAssetData(totalAmount: summary.totalAmount,
+                                             walletBalance: summary.walletBalance,
+                                             totalAssetValue: summary.totalAssetValue,
+                                             cashManagement: summary.cashManagement,
+                                             digitalInvesting: summary.digitalInvesting,
+                                             equity: summary.equity,
+                                             cryptocurrency: summary.cryptocurrency)
+            self.headerView.updateTotalAmount(summary.totalAmount)
+            self.headerView.updateTimestamp(summary.updatedAt)
+            self.applyAssetVisibility()
+        }
+        
+        viewModel.onBannerUpdated = { [weak self] bannerList in
+            self?.bannerView.update(with: bannerList,
+                                    autoScrollInterval: AppConstants.Home.Banner.autoScrollInterval)
+        }
+        
+        viewModel.onError = { errorMessage in
+            print("Load home data failed: \(errorMessage)")
+        }
     }
     
     override func setupData() {
         Task { [weak self] in
-            guard let self = self else { return }
-            await self.loadHomeData()
+            await self?.viewModel.loadHomeData()
         }
-    }
-    
-    // MARK: - Data Loading
-    private func loadHomeData() async {
-        async let preferredName = fetchPreferredName()
-        async let assetSummary = fetchAssetSummary()
-        
-        let (name, summary) = await (preferredName, assetSummary)
-        
-        if let name {
-            headerView.updateUserInfo(name)
-        }
-        
-        balanceView.updateAssetData(totalAmount: summary.totalAmount,
-                                    walletBalance: summary.walletBalance,
-                                    totalAssetValue: summary.totalAssetValue,
-                                    cashManagement: summary.cashManagement,
-                                    digitalInvesting: summary.digitalInvesting,
-                                    equity: summary.equity,
-                                    cryptocurrency: summary.cryptocurrency)
-        headerView.updateTotalAmount(summary.totalAmount)
-        headerView.updateTimestamp("as of 9 Jun 2025 15:32")
-        applyAssetVisibility()
-    }
-    
-    private func fetchPreferredName() async -> String? {
-        await Task.yield()
-        return UserManager.shared.currentUser?.data.responses.preferredName
-    }
-    
-    private func fetchAssetSummary() async -> AssetSummary {
-        await Task.yield()
-        return AssetSummary(totalAmount: "RM 124,000.00",
-                            walletBalance: "RM 10,000.00",
-                            totalAssetValue: "RM 83,000.00",
-                            cashManagement: "RM 51,300.00",
-                            digitalInvesting: "RM 12,300.00",
-                            equity: "RM 20,400.00",
-                            cryptocurrency: "RM 30,000.00")
     }
     
     // MARK: - Actions
@@ -242,8 +221,8 @@ extension HomeViewController: HomeBalanceViewDelegate {
 
 // MARK: - HomeBannerViewDelegate
 extension HomeViewController: HomeBannerViewDelegate {
-    func didTapBanner() {
-        print("Banner tapped")
+    func didTapBanner(_ banner: HomeBannerModel?) {
+        print("Banner tapped: \(banner?.targetUrl ?? "")")
     }
     
     func didTapShare() {

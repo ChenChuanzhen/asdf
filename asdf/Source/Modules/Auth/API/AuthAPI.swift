@@ -11,10 +11,6 @@ enum AuthAPI {
 
 extension AuthAPI: APITargetType {
     
-    var baseURL: URL {
-        return AppConfig.baseURL
-    }
-    
     var path: String {
         switch self {
         case .login:
@@ -59,10 +55,6 @@ extension AuthAPI: APITargetType {
         case .userInfo:
             return .requestPlain
         }
-    }
-    
-    var headers: [String : String]? {
-        return ["Content-Type": "application/json"]
     }
     
     var shouldShowLoading: Bool {

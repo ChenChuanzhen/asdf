@@ -9,5 +9,6 @@ target 'asdf' do
   pod 'Moya', '~> 15.0'
   pod 'SVProgressHUD'
   pod 'SnapKit' # Standard as per global rules
+  pod 'Kingfisher', '~> 8.8'
 
 end

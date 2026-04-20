@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.11.0)
+  - Kingfisher (8.8.1)
   - Moya (15.0.0):
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
@@ -10,6 +11,7 @@ PODS:
   - SVProgressHUD/Core (2.3.1)
 
 DEPENDENCIES:
+  - Kingfisher (~> 8.8)
   - Moya (~> 15.0)
   - SnapKit
   - SVProgressHUD
@@ -17,16 +19,18 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Kingfisher
     - Moya
     - SnapKit
     - SVProgressHUD
 
 SPEC CHECKSUMS:
   Alamofire: bd5e7b23a1a750975288482c1831d71e74415f86
+  Kingfisher: b6c16059112dd6bdadf3d7ae01472ea1ef01a6b8
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
   SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
 
-PODFILE CHECKSUM: 31fc3761c813b19ae243992abdd4c4b9985e099b
+PODFILE CHECKSUM: d29189a288eeca783d846ce9e2d0a70753d1801e
 
 COCOAPODS: 1.16.2

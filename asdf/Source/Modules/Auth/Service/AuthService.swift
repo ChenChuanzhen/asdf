@@ -1,6 +1,5 @@
 import Foundation
 import Moya
-import SVProgressHUD
 
 /// Auth Service - Application Layer for Auth Module
 final class AuthService {

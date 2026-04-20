@@ -1,6 +1,7 @@
 import UIKit
 
 enum AppConstants {
+    
     enum Home {
         enum Screen {
             static let contentHorizontalInset: CGFloat = 20
@@ -10,7 +11,7 @@ enum AppConstants {
             static let bannerTopSpacing: CGFloat = 16
             static let sectionSpacing: CGFloat = 16
             static let featuresTopSpacing: CGFloat = 24
-            static let bottomInset: CGFloat = 80
+            static let bottomInset: CGFloat = 100
         }
 
         enum Header {
@@ -72,6 +73,7 @@ enum AppConstants {
             static let pageIndicatorTopSpacing: CGFloat = 12
             static let titleFontSize: CGFloat = 14
             static let buttonFontSize: CGFloat = 14
+            static let autoScrollInterval: TimeInterval = 3
         }
 
         enum Favorites {

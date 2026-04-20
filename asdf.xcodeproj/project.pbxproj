@@ -18,6 +18,14 @@
 		6621D8242F878009000A20F4 /* LiquidGlassSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6621D8172F878009000A20F4 /* LiquidGlassSwitch.swift */; };
 		6621D84C2F87A6DD000A20F4 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6621D84B2F87A6DD000A20F4 /* CircleProgressView.swift */; };
 		66518B6F2F52964D0086CC3E /* FloatingTitleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66518B6D2F52964D0086CC3E /* FloatingTitleTextField.swift */; };
+		668222052F91D75800954B7B /* CommonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668222042F91D75800954B7B /* CommonAPI.swift */; };
+		668222082F91DA0600954B7B /* CommonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668222072F91DA0600954B7B /* CommonService.swift */; };
+		6682220B2F91DE1200954B7B /* BalancesAllModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6682220A2F91DE1200954B7B /* BalancesAllModel.swift */; };
+		6682220D2F91F3E200954B7B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6682220C2F91F3E200954B7B /* HomeViewModel.swift */; };
+		6682220D2F92075100954B7B /* StringExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6682220C2F92075100954B7B /* StringExtenstion.swift */; };
+		668222112F920B7C00954B7B /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668222102F920B7C00954B7B /* HomeAPI.swift */; };
+		668222132F920D0400954B7B /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668222122F920D0400954B7B /* HomeService.swift */; };
+		668222152F9211A200954B7B /* HomeBannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668222142F9211A200954B7B /* HomeBannerModel.swift */; };
 		669AAA712F55288400702120 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669AAA702F55288400702120 /* AppTheme.swift */; };
 		66CCE95C2F58136100892936 /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CCE95A2F58136100892936 /* CustomTabBarView.swift */; };
 		66D1CD0E2F8DDCD3005B440A /* CommonSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D1CD0D2F8DDCD3005B440A /* CommonSheetView.swift */; };
@@ -87,6 +95,14 @@
 		6621D81B2F878009000A20F4 /* ZeroCopyBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroCopyBridge.swift; sourceTree = "<group>"; };
 		6621D84B2F87A6DD000A20F4 /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		66518B6D2F52964D0086CC3E /* FloatingTitleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTitleTextField.swift; sourceTree = "<group>"; };
+		668222042F91D75800954B7B /* CommonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAPI.swift; sourceTree = "<group>"; };
+		668222072F91DA0600954B7B /* CommonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonService.swift; sourceTree = "<group>"; };
+		6682220A2F91DE1200954B7B /* BalancesAllModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancesAllModel.swift; sourceTree = "<group>"; };
+		6682220C2F91F3E200954B7B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		6682220C2F92075100954B7B /* StringExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtenstion.swift; sourceTree = "<group>"; };
+		668222102F920B7C00954B7B /* HomeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPI.swift; sourceTree = "<group>"; };
+		668222122F920D0400954B7B /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		668222142F9211A200954B7B /* HomeBannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBannerModel.swift; sourceTree = "<group>"; };
 		669AAA702F55288400702120 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		66CCE95A2F58136100892936 /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 		66D1CD0D2F8DDCD3005B440A /* CommonSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonSheetView.swift; sourceTree = "<group>"; };
@@ -203,6 +219,72 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		668222022F91CF1000954B7B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				668222092F91DDEB00954B7B /* Model */,
+				668222062F91D9F100954B7B /* Service */,
+				668222032F91CF3300954B7B /* API */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		668222032F91CF3300954B7B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				668222042F91D75800954B7B /* CommonAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		668222062F91D9F100954B7B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				668222072F91DA0600954B7B /* CommonService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		668222092F91DDEB00954B7B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6682220A2F91DE1200954B7B /* BalancesAllModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6682220E2F91F3E200954B7B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6682220C2F91F3E200954B7B /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6682220E2F920B5C00954B7B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				668222102F920B7C00954B7B /* HomeAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		6682220F2F920B6600954B7B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				668222122F920D0400954B7B /* HomeService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		668222162F9211A200954B7B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				668222142F9211A200954B7B /* HomeBannerModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		66CCE95B2F58136100892936 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +367,7 @@
 				84755DE22F401C7700E4A3A1 /* Moya+Decodable.swift */,
 				84755DE32F401C7700E4A3A1 /* UIColor+Extensions.swift */,
 				84BEEB652F3499B600287BB3 /* UIWindow+RootSwitch.swift */,
+				6682220C2F92075100954B7B /* StringExtenstion.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -497,8 +580,12 @@
 		84BEEB8D2F3499B600287BB3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				6682220F2F920B6600954B7B /* Service */,
+				6682220E2F920B5C00954B7B /* API */,
+				668222162F9211A200954B7B /* Model */,
 				84BEEB862F3499B600287BB3 /* Controller */,
 				84BEEB882F3499B600287BB3 /* Router */,
+				6682220E2F91F3E200954B7B /* ViewModel */,
 				84BEEB8C2F3499B600287BB3 /* View */,
 			);
 			path = Home;
@@ -565,13 +652,14 @@
 		84BEEB982F3499B600287BB3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				84BEEB702F3499B600287BB3 /* Account */,
-				84BEEB762F3499B600287BB3 /* Auth */,
-				84BEEB7D2F3499B600287BB3 /* Discover */,
-				84BEEB842F3499B600287BB3 /* Go */,
-				84BEEB8D2F3499B600287BB3 /* Home */,
 				84BEEB902F3499B600287BB3 /* Main */,
+				84BEEB762F3499B600287BB3 /* Auth */,
+				84BEEB8D2F3499B600287BB3 /* Home */,
 				84BEEB972F3499B600287BB3 /* Portfolio */,
+				84BEEB842F3499B600287BB3 /* Go */,
+				84BEEB7D2F3499B600287BB3 /* Discover */,
+				84BEEB702F3499B600287BB3 /* Account */,
+				668222022F91CF1000954B7B /* Common */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -774,6 +862,7 @@
 				84BEEBA42F3499B600287BB3 /* BaseViewController.swift in Sources */,
 				66EC83D32F78B8A900F341AD /* AppConstants.swift in Sources */,
 				84755DE42F401C7700E4A3A1 /* Moya+Decodable.swift in Sources */,
+				668222112F920B7C00954B7B /* HomeAPI.swift in Sources */,
 				66D1CD0E2F8DDCD3005B440A /* CommonSheetView.swift in Sources */,
 				84755DE52F401C7700E4A3A1 /* UIColor+Extensions.swift in Sources */,
 				66CCE95C2F58136100892936 /* CustomTabBarView.swift in Sources */,
@@ -784,9 +873,13 @@
 				84BE7EEF2F3EBCEE00BDEE95 /* AuthPlugin.swift in Sources */,
 				84BE7EF02F3EBCEE00BDEE95 /* TokenRefreshPlugin.swift in Sources */,
 				84E728D02F358A4500FA1825 /* NetworkManager.swift in Sources */,
+				6682220D2F92075100954B7B /* StringExtenstion.swift in Sources */,
 				84E728D12F358A4500FA1825 /* APITargetType.swift in Sources */,
 				84BE7EEA2F3EBC6C00BDEE95 /* UserModel.swift in Sources */,
 				84BE7EEB2F3EBC6C00BDEE95 /* AuthAPI.swift in Sources */,
+				668222132F920D0400954B7B /* HomeService.swift in Sources */,
+				668222152F9211A200954B7B /* HomeBannerModel.swift in Sources */,
+				668222052F91D75800954B7B /* CommonAPI.swift in Sources */,
 				84BE7EEC2F3EBC6C00BDEE95 /* AuthService.swift in Sources */,
 				84BEEBA62F3499B600287BB3 /* AppRouter.swift in Sources */,
 				84BEEBA72F3499B600287BB3 /* AccountViewController.swift in Sources */,
@@ -805,12 +898,15 @@
 				84BEEBAF2F3499B600287BB3 /* GoRouter.swift in Sources */,
 				84BEEBB02F3499B600287BB3 /* HomeViewController.swift in Sources */,
 				84BEEBB12F3499B600287BB3 /* HomeRouter.swift in Sources */,
+				6682220D2F91F3E200954B7B /* HomeViewModel.swift in Sources */,
 				84BEEBB22F3499B600287BB3 /* HomeBalanceView.swift in Sources */,
 				669AAA712F55288400702120 /* AppTheme.swift in Sources */,
 				6621D81D2F878009000A20F4 /* LiquidGlassSlider.swift in Sources */,
 				6621D81E2F878009000A20F4 /* LiquidGlassFragment.metal in Sources */,
 				6621D81F2F878009000A20F4 /* LiquidLensView.swift in Sources */,
+				668222082F91DA0600954B7B /* CommonService.swift in Sources */,
 				6621D8202F878009000A20F4 /* LiquidGlassVertex.metal in Sources */,
+				6682220B2F91DE1200954B7B /* BalancesAllModel.swift in Sources */,
 				6621D8212F878009000A20F4 /* LiquidGlassView.swift in Sources */,
 				6621D8222F878009000A20F4 /* LiquidGlassEffectView.swift in Sources */,
 				6621D8232F878009000A20F4 /* ZeroCopyBridge.swift in Sources */,
